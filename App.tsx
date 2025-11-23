@@ -153,9 +153,9 @@ function App() {
                 goldPrice={goldData.price}
                 goldChange={goldData.changePercent}
                 fundingRate={fundingData[0]?.rate * 100 || 0}
-                // Pass simplistic range data for AI context
-                btcH1Range={btcHighLow[0]?.rangePercent || 0}
-                goldH1Range={goldHighLow[0]?.rangePercent || 0}
+                // Pass FULL deep data for AI context
+                btcVolatility={btcHighLow}
+                goldVolatility={goldHighLow}
              />
             
             {/* Disclaimer / Footer */}
