@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BTC ₿ XAU • Pro Dashboard 2025</title>
+  <title>BTC ₿ XAU • Live Dashboard 2025</title>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
@@ -11,20 +11,21 @@
 <body>
   <div class="container">
     <header>
-      <h1>BTC / XAU</h1>
-      <p class="subtitle">Live Dashboard • Funding • CME Gap • Correlation • High/Low</p>
+      <h1>₿ BTC / XAU ₿</h1>
+      <p class="subtitle">Live Dashboard • 24/7 Updates • Funding • CME Gap • High/Low</p>
     </header>
 
     <div class="grid">
-      <!-- Price Cards -->
+      <!-- BTC Price Card -->
       <div class="card price-card" id="btc-card">
-        <h3>BITCOIN</h3>
+        <h3>BITCOIN BTCUSD</h3>
         <div class="price" id="btc-price">$--,---</div>
         <div class="change" id="btc-change">--%</div>
       </div>
 
+      <!-- XAU Price Card -->
       <div class="card price-card" id="xau-card">
-        <h3>GOLD XAU/USD</h3>
+        <h3>GOLD XAUUSD</h3>
         <div class="price" id="xau-price">$--,---</div>
         <div class="change" id="xau-change">--%</div>
       </div>
@@ -50,26 +51,26 @@
         <div id="correlation">Đang tải...</div>
       </div>
 
-      <!-- High/Low Table - SIÊU ĐẸP -->
+      <!-- High/Low Table -->
       <div class="card pro-hl-card">
         <h3>BTC High / Low Theo Khung Thời Gian</h3>
         <div class="pro-hl-table">
           <div class="hl-header">
             <span>Khung</span><span>High</span><span>Low</span><span>Biến động</span>
           </div>
-          <div id="hl-rows">Đang tải dữ liệu...</div>
+          <div id="hl-rows">Đang tải dữ liệu realtime...</div>
         </div>
       </div>
 
       <!-- Chart -->
       <div class="card chart-card">
-        <h3>BTCUSD vs XAUUSD (Overlay)</h3>
+        <h3>BTCUSD vs XAUUSD (Overlay 1h)</h3>
         <div id="tvchart"></div>
       </div>
     </div>
 
     <footer>
-      <p>© 2025 <strong>BTC ₿ XAU Dashboard</strong> • Made for real traders</p>
+      <p>© 2025 BTC ₿ XAU Dashboard • Updated 23/11/2025 • Made for traders</p>
     </footer>
   </div>
 
