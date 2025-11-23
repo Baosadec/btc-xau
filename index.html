@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Crypto & Forex & Stocks Heatmap Pro</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Phân tích dữ liệu tài chính toàn diện</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Tìm kiếm coin, cặp Forex hoặc chỉ số..." id="searchInput">
+                <i class="fas fa-search"></i>
+            </div>
+        </header>
+
+        <div class="tabs">
+            <button class="tab active" data-tab="crypto">Crypto</button>
+            <button class="tab" data-tab="forex">Forex</button>
+            <button class="tab" data-tab="stocks">Chứng khoán Mỹ</button>
+            <button class="tab" data-tab="gainers">Tăng mạnh</button>
+            <button class="tab" data-tab="losers">Giảm mạnh</button>
+        </div>
+
+        <div class="table-container">
+            <table id="cryptoTable">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Ký hiệu</th>
+                        <th>Giá</th>
+                        <th>24h%</th>
+                        <th>Funding Rate</th>
+                        <th>Khối lượng (24h)</th>
+                        <th>Vốn hóa</th>
+                        <th>Open Interest</th>
+                        <th>OI (24h%)</th>
+                        <th>Thanh lý (24h)</th>
+                    </tr>
+                </thead>
+                <tbody id="cryptoBody"></tbody>
+            </table>
+
+            <table id="forexTable" style="display:none;">
+                <thead>
+                    <tr>
+                        <th>Cặp</th>
+                        <th>Giá</th>
+                        <th>Thay đổi 24h</th>
+                        <th>Thay đổi %</th>
+                        <th>High 24h</th>
+                        <th>Low 24h</th>
+                        <th>Khối lượng</th>
+                    </tr>
+                </thead>
+                <tbody id="forexBody"></tbody>
+            </table>
+
+            <table id="stocksTable" style="display:none;">
+                <thead>
+                    <tr>
+                        <th>Chỉ số</th>
+                        <th>Giá</th>
+                        <th>Thay đổi</th>
+                        <th>Thay đổi %</th>
+                        <th>High 24h</th>
+                        <th>Low 24h</th>
+                        <th>Khối lượng</th>
+                    </tr>
+                </thead>
+                <tbody id="stocksBody"></tbody>
+            </table>
+        </div>
+
+        <!-- Modal Chi Tiết (cho Crypto & Stocks, Forex đơn giản) -->
+        <div id="coinModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="coin-info-header">
+                        <img id="modalImage" src="" alt="">
+                        <div>
+                            <h2 id="modalName">Bitcoin</h2>
+                            <p id="modalSymbol">BTC</p>
+                        </div>
+                    </div>
+                    <span class="close">×</span>
+                </div>
+                <div class="modal-body">
+                    <div class="chart-container">
+                        <canvas id="priceChart"></canvas>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat"><span>Giá hiện tại</span><strong id="modalPrice">$0</strong></div>
+                        <div class="stat"><span>Thay đổi 24h</span><strong id="modalChange" class="positive">0%</strong></div>
+                        <div class="stat"><span>Vốn hóa / Khối lượng</span><strong id="modalMarketCap">$0</strong></div>
+                        <div class="stat"><span>Open Interest / High</span><strong id="modalOI">$0</strong></div>
+                        <div class="stat"><span>Funding Rate / Low</span><strong id="modalFunding">0%</strong></div>
+                        <div class="stat"><span>OI 24h% / Vol</span><strong id="modalVolume">0%</strong></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 Crypto & Forex & Stocks Heatmap Pro • Cập nhật tự động từ CoinGecko, ExchangeRate-API & Alpha Vantage</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
